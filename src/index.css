@@ -24,6 +24,11 @@ a:hover {
   color: #535bf2;
 }
 
+/* quick, safe: hide horizontal overflow site-wide */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
 }
@@ -63,4 +68,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Hide scrollbar (works for Chrome, Edge, Safari) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar (works for Firefox) */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Optional: Hide scrollbar for MS browsers */
+.no-scrollbar {
+  -ms-overflow-style: none;
 }

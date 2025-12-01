@@ -5,6 +5,7 @@ import './App.css'
 
 // Components
 import Header from './components/Header.jsx'
+import Slider from './components/Slider.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,10 @@ function App() {
         
         {/* Header */}
         <Header />
+
+        {/* Slider */}
+        <Slider />
+        
       </div>
     </>
   )

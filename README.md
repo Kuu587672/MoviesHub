@@ -42,3 +42,11 @@ disney-clone/</br>
 &emsp;1. Smooth appearance/disappearance</br>
 &emsp;2. Intuitive mobile/tablet navigation</br>
 &emsp;3. Consistent icon + text styling
+
+## Version-0.2
+
+1. Implemented a fully functional Trending Movies Slider using TMDB API data.
+2. Added left and right navigation arrows using react-icons (HiChevronLeft, HiChevronRight).
+3. Enabled horizontal scroll with smooth animation.
+4. Used useRef() to directly control the slider DOM element.
+5. Added hover border animation on movie posters.

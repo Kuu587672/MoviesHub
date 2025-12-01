@@ -2,7 +2,7 @@ import React from 'react'
 
 function HeaderItem({name, Icon}) {
   return (
-    <div className='group text-white flex items-center gap-2 text-12 font-semibold cursor-pointer md:mb-0 mb-4'>
+    <div className='group text-white flex items-center gap-2 text-[12px] font-semibold cursor-pointer md:mb-0 mb-4'>
         <Icon className='
             w-5
             h-5
@@ -10,7 +10,7 @@ function HeaderItem({name, Icon}) {
             transition-colors 
             duration-300' />
         <div className='
-            md:block
+            inline-block
             relative
             group-hover:text-gray-400 
             transition-colors 
