@@ -55,7 +55,7 @@ function Header() {
                 {/* Desktop Menu */}
                 <div className='hidden md:flex gap-8 md:gap-10'>
                     {menu.map((item) => (
-                        <HeaderItem key={`desktop-${item.name}`} name={item.name} Icon={item.icon} />
+                        <HeaderItem key={`desktop-${item.name}`} name={item.name} showName={true} Icon={item.icon} />
                     ))}
                 </div>
 
@@ -66,8 +66,9 @@ function Header() {
                     {menu.slice(0, 3).map((item, index) => (
                         <HeaderItem 
                         key={`mobile-top-${index}-${item.name || 'icon'}`} 
-                        name={''} 
+                        name={item.name} 
                         Icon={item.icon} 
+                        showName={false}
                         />
                     ))}
 
@@ -82,7 +83,7 @@ function Header() {
                             aria-label="Open more menu"
                             className='focus:outline-none'
                         >
-                            <HeaderItem name={''} Icon={HiDotsVertical} />
+                            <HeaderItem name={'Toggle'} Icon={HiDotsVertical} />
                         </div>
 
                         {toggle && (
@@ -91,7 +92,8 @@ function Header() {
                                     <HeaderItem 
                                     key={`mobile-dropdown-${index}-${item.name}`} 
                                     name={item.name} 
-                                    Icon={item.icon} 
+                                    Icon={item.icon}
+                                    showName={true}
                                     />
                                 ))}
                             </div>
