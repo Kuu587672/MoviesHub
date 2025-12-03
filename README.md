@@ -79,3 +79,9 @@ disney-clone/</br>
 1. Improved hover effects on movie posters.
 2. Center-aligned arrow controls for better UX.
 3. Cleaner spacing and visuals in genre rows.
+
+## Version-0.4
+
+1. Added separate sizes for the banner and the poster.
+2. Basic UI improvements.
+3. Basic bug hunting.
