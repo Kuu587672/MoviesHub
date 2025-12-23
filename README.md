@@ -85,3 +85,21 @@ disney-clone/</br>
 1. Added separate sizes for the banner and the poster.
 2. Basic UI improvements.
 3. Basic bug hunting.
+
+## Version-0.5
+
+### Loading States
+
+1. Added section-level loaders for movie lists and sliders.
+2. Loader appears while:</br>
+&emsp;1. Trending movies are being fetched.</br>
+&emsp;2. Movies by genre are loading.
+3. Loaders are properly centered and responsive.
+
+
+### Footer
+
+1. Added a clean, minimal footer section
+2. Displays project information and attribution
+3. Matches the overall Disney-style dark theme
+4. Responsive across all screen sizes

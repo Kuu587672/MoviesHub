@@ -43,7 +43,7 @@ export default function ProductionTile({ image, video, onActivate }) {
 
   return (
     <div
-      className="relative overflow-hidden border-2 border-gray-600 rounded-lg hover:scale-110 transition-all duration-300 ease-in cursor-pointer shadow-xl shadow-black"
+      className="group relative overflow-hidden border-2 border-gray-600 rounded-lg hover:scale-110 transition-all duration-300 ease-in cursor-pointer shadow-xl shadow-black"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       onTouchStart={handleTouchStart}
@@ -57,7 +57,7 @@ export default function ProductionTile({ image, video, onActivate }) {
         playsInline
         disablePictureInPicture
         controls={false}
-        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-200 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none"
       />
       <img src={image} alt="production logo" className="w-full block relative z-0" />
     </div>

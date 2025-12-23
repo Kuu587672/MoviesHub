@@ -1,24 +1,29 @@
 import React, { useEffect, useState, useRef } from 'react'
 import GlobalApi from '../services/GlobalApi'
+import Loader from './Loader'
 
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"
 
+
 function Slider() {
 
+    const [loading, setLoading] = useState(true);
     const [movieList, setMovieList] = useState([]);
     const elementRef = useRef();
 
-    const getTrendingMovies = () => {
-        GlobalApi.getTrendingMovies()
-        .then(resp => {
-            // console.log("Trending movies: ", resp.data.results);
+    // show loading screen while fetching data
+    const getTrendingMovies = async () => {
+        try {
+            setLoading(true);
+            const resp = await GlobalApi.getTrendingMovies();
             setMovieList(resp.data.results);
-        })
-        .catch(err => {
-            console.error("Error fetching trending movies: ", err);
-        })
+        } catch (err) {
+            console.error("Error fetching trending movies:", err);
+        } finally {
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
@@ -70,12 +75,16 @@ function Slider() {
         className='flex overflow-x-auto no-scrollbar w-full px-5 md:px-16 py-4 scroll-smooth' 
         ref={elementRef}
         >
-            {movieList.map((item, index) => (
+            { loading 
+            ? <Loader className='w-full md:h-[310px] mr-5'/>
+            : movieList.map(item => (
                 <img 
-                key={item.id ?? item.backdrop_path ?? item.poster_path}
-                src={IMAGE_BASE_URL + item.backdrop_path}
-                className='shrink-0 w-full md:h-[310px] object-cover object-top mr-5 last:mr-0 rounded-md hover:border-4 hover:scale-y-105 border-gray-400 transition-all duration-200 ease-in-out' />
-            ))}
+                  key={item.id ?? item.backdrop_path ?? item.poster_path}
+                  src={IMAGE_BASE_URL + item.backdrop_path}
+                  className='shrink-0 w-full md:h-[310px] object-cover object-top mr-5 last:mr-0 rounded-md hover:border-4 hover:scale-y-105 border-gray-400 transition-all duration-200 ease-in-out'
+                />
+              ))  
+            }
         </div>
     </div>
   )
