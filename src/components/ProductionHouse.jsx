@@ -1,30 +1,16 @@
 import React, { use, useRef } from 'react'
 import ProductionTile from './ProductionTile';
 
-// Import Images
-import disney from './../assets/images/disney.png';
-import pixar from './../assets/images/pixar.png';
-import marvel from './../assets/images/marvel.png';
-import starwars from './../assets/images/starwar.png';
-import natgeo from './../assets/images/nationalG.png';
-
-// Import Videos
-import disneyVid from './../assets/videos/disney.mp4';
-import pixarVid from './../assets/videos/pixar.mp4';
-import marvelVid from './../assets/videos/marvel.mp4';
-import starwarsVid from './../assets/videos/star-wars.mp4';
-import natgeoVid from './../assets/videos/national-geographic.mp4';
-
 function ProductionHouse() {
     const activeVideoRef = useRef(null);
 
     // List that contains all the images and videos
     const productionHouseList = [
-        { id: 1, image: disney, video: disneyVid },
-        { id: 2, image: pixar, video: pixarVid },
-        { id: 3, image: marvel, video: marvelVid },
-        { id: 4, image: starwars, video: starwarsVid },
-        { id: 5, image: natgeo, video: natgeoVid },
+        { id: 1, image: "public/images/disney.png", video: "public/videos/tile-vid-1.mp4" },
+        { id: 2, image: "public/images/pixar.png", video: "public/videos/tile-vid-2.mp4" },
+        { id: 3, image: "public/images/marvel.png", video: "public/videos/tile-vid-3.mp4" },
+        { id: 4, image: "public/images/starwar.png", video: "public/videos/tile-vid-4.mp4" },
+        { id: 5, image: "public/images/nationalG.png", video: "public/videos/tile-vid-5.mp4" },
     ]
 
     // parent callback to set active playing video and pause previous

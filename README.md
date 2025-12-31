@@ -124,3 +124,29 @@ disney-clone/</br>
 1. Video iframe renders only when a valid trailerKey exists.
 2. Loader fallback ensures UI does not break if the video takes time to load.
 3. Component safely handles missing or delayed trailer data.
+
+## Version-0.7
+
+### Movie Search Functionality
+
+1. Integrated TMDB search API
+2. Live search results displayed dynamically
+3. Homepage content replaced by search results when active
+4. Handles empty search and no-result scenarios
+
+### Loading States for Search
+
+1. Loader displayed while fetching search results
+2. Improves UX during API calls
+
+### Asset Structure Improvements
+
+1. Reorganized images and videos into cleaner directories
+2. Updated all import paths to match new asset locations
+3. Reduced confusion and improved project maintainability
+
+### Technical Improvements
+
+1. Centralized search API inside GlobalApi
+2. Lifted search state for better global control
+3. Clean conditional rendering for home vs search view

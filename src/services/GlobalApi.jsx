@@ -20,9 +20,14 @@ const getMovieVideos = (id) => {
     return axios.get(`${movieBaseURL}/movie/${id}/videos?api_key=${api_key}`);
 }
 
+const searchMovies = (query) => {
+    return axios.get(`${movieBaseURL}/search/movie?api_key=${api_key}&query=${query}`);
+}
+
 export default {
     getTrendingMovies,
     getMovieByGenreId,
     getMovieDetails,
     getMovieVideos,
+    searchMovies,
 }
