@@ -25,8 +25,6 @@ function Home() {
         <>
           {/* Slider */}
           <Slider />
-          {/* Production House */}
-          <ProductionHouse />
           {/* Movies sorted by genre */}
           <GenreMovieList />
         </>
